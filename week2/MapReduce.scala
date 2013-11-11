@@ -15,9 +15,9 @@ package week2
  */
 
 object MapReduce {
-	def mapReduce(f: Double => Double, combine: (Double, Double) => Double, zeroVal: Int)(lower: Int, upper: Int): Double = {
+	def mapReduce(f: Int => BigInt, combine: (BigInt, BigInt) => BigInt, zeroVal: BigInt)(lower: Int, upper: Int): BigInt = {
 
-		def iter(acc: Double, lower: Int): Double = {
+		def iter(acc: BigInt, lower: Int): BigInt = {
 			if (lower > upper) acc
 			else iter(combine(acc, f(lower)), lower + 1)
 		}
@@ -25,7 +25,7 @@ object MapReduce {
 	}
 	def main(args: Array[String]) {
 		println(mapReduce(x => x * x * x, (x, y) => x + y, 0)(1, 5)) // addition of cubes
-		println(mapReduce(factorial.factorial(_), (x, y) => x * y, 1)(1, 6)) // product of factorials
+		println(mapReduce(factorial.fact, (x, y) => x * y, 1)(50 , 60)) // product of factorials
 
 	}
 }
