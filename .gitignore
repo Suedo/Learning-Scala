@@ -42,3 +42,7 @@ test.sc
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# 2020
+# IntelliJ idea stuff
+.idea
