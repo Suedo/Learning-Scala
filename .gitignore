@@ -46,3 +46,4 @@ Thumbs.db
 # 2020
 # IntelliJ idea stuff
 .idea
+project/target/**
