@@ -17,7 +17,7 @@ object ActorCapabilities extends App {
         println(s"[${self.path.name}] Hi ${actor.path.name}")
         actor ! "Hi"
       case IntroduceSelf(actor) => actor ! s"Hi, I am ${actor.path.name}"
-      case ForwardMessages(content, actor) => actor ! s"Fowarded message: ${content}"
+      case ForwardMessages(content, actor) => actor forward s"Fowarded message: ${content}"
     }
   }
 
