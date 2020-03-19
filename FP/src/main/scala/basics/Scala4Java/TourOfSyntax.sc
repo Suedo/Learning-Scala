@@ -16,3 +16,5 @@ val bdTotal = BigDecimal(10) + BigDecimal(20)   // scala
 
 
 // unkike java, scala does not have `protected` access modifier. it uses other things to acheive the same thing
+
+(0 to 9).foreach(println(_))

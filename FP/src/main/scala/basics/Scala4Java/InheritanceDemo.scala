@@ -1,4 +1,4 @@
-package Scala4Java
+package basics.Scala4Java
 
 import scala.util.Sorting
 
@@ -42,8 +42,10 @@ object test extends App {
     def compare(a: Customer, b:Customer) = (a.total() - b.total()).toInt
   }
 
+  // inheritance, calling super
   class DiscountedCustomer(name: String, address: Address, val discount: Int) extends Customer(name, address) {
-    override def total(startingAmount: Double): Double = super.total(startingAmount) * (1 - (discount * .01)) // constructor
+    override def total(startingAmount: Double): Double =
+      super.total(startingAmount) * (1 - (discount * .01)) // constructor
   }
 
   val home: Address = Address("18th Cross", "Bangalore", 560102)
